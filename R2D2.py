@@ -1,20 +1,11 @@
 
-R2D2_Junge = 10
-R2D2_Erwachsene = 10
-R2D2_Alt = 10
-NaechsteRunde = 0
+def zyklus(junge, erwachsene, alt):
+    neue_junge = (erwachsene * 4) + (alt * 2)
+    neue_erwachsene = junge // 2
+    neue_alt = erwachsene // 3
+    print(f"Vorher  -> Junge: {junge}, Erwachsene: {erwachsene}, Alte: {alt}")
+    print(f"Nachher -> Junge: {neue_junge}, Erwachsene: {neue_erwachsene}, Alte: {neue_alt}")
+    return neue_junge, neue_erwachsene, neue_alt
 
-def Zyklus (R2D2_Junge, R2D2_Erwachsene, R2D2_Alt):
-    NaechsteRunde = (
-                    R2D2_Junge = R2D2_Junge / 2
-                    R2D2_Erwachsene = R2D2_Erwachsene / 3
-
-                    R2D2_Junge = R2D2_Junge + (R2D2_Erwachsene * 4)
-                    R2D2_Junge = R2D2_Junge + (R2D2_Alt * 2)
-                     )
-    R2D2_Alt = R2D2_Erwachsene
-    R2D2_Erwachsene = R2D2_Junge
-    R2D2_Junge = NaechsteRunde
-
-
-    return R2D2_Junge, R2D2_Erwachsene, R2D2_Alt
+#zyklus(60, 5, 3)
+zyklus(26, 30, 1)

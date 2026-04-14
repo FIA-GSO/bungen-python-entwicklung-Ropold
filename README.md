@@ -27,10 +27,10 @@ Erstellen Sie ein Aktivitätsdiagramm zur Populationsentwicklung von R2-D2-Robot
 |**Schritt**|**Junge R2D2**|**Erwachsene R2D2**|**Alte R2D2**|
 | :-: | :-: | :-: | :-: |
 |1|10|10|10|
-|2||||
-|…|<p></p><p></p>|||
-|<p></p><p></p>||||
-|<p></p><p></p>||||
+|2|60|5|3|
+|3|26|30|1|
+|4|122|13|10|
+|5|72|61|4|
 
 Erstellen Sie anschließend die folgende Python Funktion, die ihr Aktivitätsdiagramm umsetzt. 
 
