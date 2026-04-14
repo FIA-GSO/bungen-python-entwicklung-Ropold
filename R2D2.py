@@ -7,5 +7,5 @@ def zyklus(junge, erwachsene, alt):
     print(f"Nachher -> Junge: {neue_junge}, Erwachsene: {neue_erwachsene}, Alte: {neue_alt}")
     return neue_junge, neue_erwachsene, neue_alt
 
-#zyklus(60, 5, 3)
+zyklus(60, 5, 3)
 zyklus(26, 30, 1)
