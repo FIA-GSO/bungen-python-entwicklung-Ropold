@@ -26,7 +26,35 @@ def compute_r2d2_population(steps: int) -> tuple[int,int,int]:
 
 
 #---------------------Aufgabe 3 Streichholz------------------------------
-#IMPLEMENT YOUR SOLUTION FOR THE STEICHHOLZSPIEL HERE
+def streich_holz_spiel(streichhoelzer: int = 31):
+    print(f"\n=== Streichholzspiel (Nim-Spiel) ===")
+    print(f"Streichhölzer zu Beginn: {streichhoelzer}")
+    print("Wer das letzte Streichholz nehmen muss, verliert!")
+    print("Pro Zug: mindestens 1, höchstens 6 Streichhölzer.\n")
+
+    streichhoelzer -= 2
+    print(f"Computer nimmt 2 Streichhölzer. Noch übrig: {streichhoelzer}")
+
+    while streichhoelzer > 1:
+        max_take = min(6, streichhoelzer)
+        while True:
+            try:
+                mensch_nimmt = int(input(f"\nDein Zug (1–{max_take}, noch {streichhoelzer} übrig): "))
+                if 1 <= mensch_nimmt <= max_take:
+                    break
+                print(f"Bitte eine Zahl zwischen 1 und {max_take} eingeben.")
+            except ValueError:
+                print("Bitte eine ganze Zahl eingeben.")
+
+        streichhoelzer -= mensch_nimmt
+        print(f"Du nimmst {mensch_nimmt}. Noch übrig: {streichhoelzer}")
+
+        if streichhoelzer > 0:
+            computer_nimmt = 7 - mensch_nimmt
+            streichhoelzer -= computer_nimmt
+            print(f"Computer nimmt {computer_nimmt}. Noch übrig: {streichhoelzer}")
+
+    print("\nNur noch 1 Streichholz übrig – du musst es nehmen. Du verlierst!")
 
 
 #---------------------Aufgabe 4 Heron ------------------------------------
@@ -52,21 +80,21 @@ if __name__ == '__main__':
     print("You need to adjust this code to run your implementation")
 
     # Aufgabe 1
-    print(f"""
-        # R2D2 Population after 5 steps is: 
-        # Young: {compute_r2d2_population(5)[0]}
-        # Adults: {compute_r2d2_population(5)[1]}
-        # Old: {compute_r2d2_population(5)[2]}""")
+    # print(f"""
+    #     # R2D2 Population after 5 steps is:
+    #     # Young: {compute_r2d2_population(5)[0]}
+    #     # Adults: {compute_r2d2_population(5)[1]}
+    #     # Old: {compute_r2d2_population(5)[2]}""")
     # print (compute_r2d2_population(5))
 
     # Aufgabe 2
     # TO BE IMPLEMENTED
     
     # Aufgabe 3
-    # TO BE IMPLEMENTED
+    streich_holz_spiel()
 
     # Aufgabe 4
-    print (f"Die Wurzel für die Fläche 25 und Grenze 0.01 nach Heron ist: {heron_verfahren(25, 0.01)}")
+    #print (f"Die Wurzel für die Fläche 25 und Grenze 0.01 nach Heron ist: {heron_verfahren(25, 0.01)}")
 
     # Aufgabe 5
     # TO BE IMPLEMENTED
