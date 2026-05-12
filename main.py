@@ -20,6 +20,25 @@ def compute_r2d2_population(steps: int) -> tuple[int,int,int]:
     return (junge, erwachsene, alt)
 
 
+def r2d2_population_list(steps: int) -> list[tuple[int, int, int]]:
+    junge, erwachsene, alt = 60, 5, 3
+
+    history: list[tuple[int, int, int]] = []
+    history.append((junge, erwachsene, alt))
+
+    for i in range(steps - 1):
+        neue_junge = (erwachsene * 4) + (alt * 2)
+        neue_erwachsene = junge // 2
+        neue_alt = erwachsene // 3
+
+        junge, erwachsene, alt = neue_junge, neue_erwachsene, neue_alt
+        history.append((junge, erwachsene, alt))
+
+    return history
+
+print(r2d2_population_list(10))
+
+
 
 #---------------------Aufgabe 2 Quantitativer Angebotsvergleich------------------------------
 #IMPLEMENT YOUR SOLUTION FOR THE Quantitativer Angebotsvergleich HERE
@@ -91,7 +110,7 @@ if __name__ == '__main__':
     # TO BE IMPLEMENTED
     
     # Aufgabe 3
-    streich_holz_spiel()
+    # streich_holz_spiel()
 
     # Aufgabe 4
     #print (f"Die Wurzel für die Fläche 25 und Grenze 0.01 nach Heron ist: {heron_verfahren(25, 0.01)}")
